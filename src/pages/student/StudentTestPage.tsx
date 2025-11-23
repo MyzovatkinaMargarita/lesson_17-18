@@ -76,6 +76,7 @@ export default function StudentTestPage() {
 
 
   useEffect(() => {
+    if (!testId || testId <= 0) return;
     let ignore = false;
 setLoading(true);
 setError("");
