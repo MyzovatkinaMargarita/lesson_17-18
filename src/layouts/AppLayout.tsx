@@ -7,8 +7,12 @@ export default function AppLayout() {
           <NavLink to="/login" end className={({ isActive }) => (isActive ? "active" : undefined)}>Login</NavLink>
           <NavLink to="/student" className={({ isActive }) => (isActive ? "active" : undefined)}>Student</NavLink>
           <NavLink to="/admin" className={({ isActive }) => (isActive ? "active" : undefined)}>Admin</NavLink>
-          <Item to="/student/tests" end> ... </Item>
+          <Item to="/student/tests" end aria-label="Перейти к списку тестов">
+          <IconBox><TestsIcon /></IconBox>
+  Тестирования
+</Item>
         </nav>
+        <Brand><img src={Logo} alt="ПАЗЛ & КОД" aria-hidden="true" /></Brand>
       </header>
       <main style={{ padding: 24 }}>
         <Outlet />
