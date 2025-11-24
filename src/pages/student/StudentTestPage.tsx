@@ -65,6 +65,8 @@ type Question = {
 };
 
 export default function StudentTestPage() {
+  return <div>Список тестов</div>;
+}
   const { id } = useParams<{ id: string }>();
   const testId = Number(id);
 
@@ -189,7 +191,7 @@ if (!Number.isFinite(testId)) {
 }, []);
 useEffect(() => {
   // сюда пойдёт логика загрузки из JSON (реализуется в следующих шагах)
-}, [testId]);
+
 
 
 
