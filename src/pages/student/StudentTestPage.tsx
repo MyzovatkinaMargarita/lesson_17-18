@@ -3,6 +3,18 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from "@emotion/styled";
 
+import StudentHeader from "../components/student/StudentHeader";
+
+export default function StudentTestsPage() {
+  return (
+    <>
+      <StudentHeader title="Тестирования" />
+      <div>Список тестов</div>
+    </>
+  );
+}
+
+
 const QuestionsList = styled.ol`
   display: grid;
   gap: 16px;
