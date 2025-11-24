@@ -23,32 +23,6 @@ const Main = styled.main`
 const Brand = styled.div` margin-bottom: 25px; `;
 const Nav = styled.nav` display: grid; gap: 6px; `;
 
-const Item = styled(NavLink)`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #09090b;
-  font-weight: 500;
-  font-size: 14px;
-  transition: background .15s, color .15s;
-
-  &:hover { background: #f6f8fb; }
-  &:focus-visible { outline: 2px solid #0e73f6; outline-offset: 2px; }
-
-  &.active {
-    background: #e8f5ff;
-    color: #0e73f6;
-  }
-`;
-
-const IconBox = styled.span`
-  display: inline-grid;
-  place-items: center;
-`;
-
 
 const Item = styled(NavLink)`
   display: flex;
@@ -75,5 +49,66 @@ const IconBox = styled.span`
   display: inline-grid;
   place-items: center;
 `;
+
+
+const Item = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #09090b;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background .15s, color .15s;
+
+  &:hover { background: #f6f8fb; }
+  &:focus-visible { outline: 2px solid #0e73f6; outline-offset: 2px; }
+
+  &.active {
+    background: #e8f5ff;
+    color: #0e73f6;
+  }
+`;
+
+const IconBox = styled.span`
+  display: inline-grid;
+  place-items: center;
+`;
+
+export default function StudentLayout() {
+  return (
+    <Shell>
+      <Aside>
+        <Brand>
+          <img src={Logo} alt="ПАЗЛ & КОД" aria-hidden="true" />
+        </Brand>
+
+        <Nav>
+          <Item to="/student/tests" end aria-label="Перейти к списку тестов">
+          <IconBox><TestsIcon /></IconBox>
+          Тестирования
+          </Item>
+
+          <Item to="/student/statistics">
+            <IconBox><StatsIcon /></IconBox>
+            Статистика
+          </Item>
+
+          <Item to="/student/profile">
+            <IconBox><ProfileIcon /></IconBox>
+            Профиль
+          </Item>
+        </Nav>
+      </Aside>
+
+      <Main>
+        <Outlet />
+      </Main>
+    </Shell>
+  );
+}
+
 
 
